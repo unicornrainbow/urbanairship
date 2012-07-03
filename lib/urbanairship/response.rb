@@ -1,4 +1,4 @@
-module Urbanairship
+class Urbanairship
   module Response
     module InstanceMethods
       attr_accessor :ua_response, :ua_options
