@@ -112,19 +112,19 @@ describe Urbanairship do
     end
 
     it "uses the iOS interface by default" do
-      Urbanairship.register_device("new_device_token")
+      @urbanairship.register_device("new_device_token")
       FakeWeb.last_request.path.should == "/api/device_tokens/new_device_token"
     end
 
     it "uses the android interface if 'provider' configuration option is set to :android" do
-      Urbanairship.provider = :android
-      Urbanairship.register_device("new_device_token")
+      @urbanairship.provider = :android
+      @urbanairship.register_device("new_device_token")
       FakeWeb.last_request.path.should == "/api/apids/new_device_token"
-      Urbanairship.provider = nil
+      @urbanairship.provider = nil
     end
 
     it "uses the android interface if 'provider' option is passed as :android" do
-      Urbanairship.register_device("new_device_token", :provider => :android)
+      @urbanairship.register_device("new_device_token", :provider => :android)
       FakeWeb.last_request.path.should == "/api/apids/new_device_token"
     end
   end
