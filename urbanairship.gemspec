@@ -1,5 +1,3 @@
-require 'rake'
-
 Gem::Specification.new do |s|
   s.name = 'urbanairship'
   s.version = '2.1.0'
